@@ -107,10 +107,10 @@ The code structure still allows switching to Postgres (e.g. AWS RDS) by changing
 
 ### API Endpoints
 
-    Base URL (local):
-        ```bash
-        http://localhost:3000
-        ```
+Base URL (local):
+```bash
+http://localhost:3000
+```
 
    Health Check
         ```bash
