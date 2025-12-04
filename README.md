@@ -116,11 +116,11 @@ Health Check
 ```bash
 GET /
 ```
-- Returns ```bash { "message": "Golf Club API is running" } when the API is up. ```
+- Returns ``` { "message": "Golf Club API is running" } when the API is up. ```
 
 Members
 Create Member
-POST ```bash /api/members ```
+POST ``` /api/members ```
 Body (JSON):
 ```bash
 {
@@ -136,7 +136,7 @@ Body (JSON):
 - Description: Adds a new member to the system.
 
 Get / Search Members
-- GET ```bash /api/members ```
+- GET ``` /api/members ```
 Supports multiple optional query parameters:
 name: partial, case-insensitive match on member name
 Example: /api/members?name=keira
@@ -150,17 +150,17 @@ tournamentStartDate: find members that are participating in tournaments starting
 Example: /api/members?tournamentStartDate=2025-07-01
 
 Get Single Member
-GET ```bash /api/members/:id ```
+GET ``` /api/members/:id ```
 Returns a single member by ID, including the tournaments they are participating in.
 
 Get Tournaments for a Member
-GET ```bash /api/members/:id/tournaments ```
+GET ``` /api/members/:id/tournaments ```
 Returns all tournaments that the given member is registered for.
 
 
 #### Tournaments
 Create Tournament
-POST ```bash /api/tournaments ```
+POST ``` /api/tournaments ```
 Body (JSON):
 ```bash
 {
@@ -174,7 +174,7 @@ Body (JSON):
 - Description: Creates a new tournament.
 
 Get / Search Tournaments
-- GET ```bash /api/tournaments ```
+- GET ``` /api/tournaments ```
 Optional query parameters:
 - startDate: filter tournaments by start date
 Example: /api/tournaments?startDate=2025-07-01
@@ -183,7 +183,7 @@ Example: /api/tournaments?location=John
 Returns tournaments along with their participating members.
 
 Add Member to Tournament
-POST ```bash /api/tournaments/:id/members ```
+POST ``` /api/tournaments/:id/members ```
 Body (JSON):
 ```bash
 {
@@ -193,7 +193,7 @@ Body (JSON):
 Description: Adds the specified member to the given tournament.
 
 Get Members in a Tournament
-GET ```bash /api/tournaments/:id/members ```
+GET ``` /api/tournaments/:id/members ```
 Returns all members participating in the specified tournament. This satisfies the requirement to "find all members in a tournament".
 
 
