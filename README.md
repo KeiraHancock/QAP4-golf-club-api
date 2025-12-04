@@ -112,50 +112,50 @@ Base URL (local):
 http://localhost:3000
 ```
 
-   Health Check
-        ```bash
-        GET /
-        ```
-        - Returns ```bash { "message": "Golf Club API is running" } when the API is up. ```
+Health Check
+```bash
+GET /
+```
+- Returns ```bash { "message": "Golf Club API is running" } when the API is up. ```
 
-    Members
-        Create Member
-        POST ```bash /api/members ```
-        Body (JSON):
-        ```bash
-        {
-        "name": "Keira Hancock",
-        "address": "123 Test Street",
-        "email": "keira@example.com",
-        "phone": "555-1234",
-        "membershipType": "Gold",
-        "membershipStartDate": "2025-01-01",
-        "membershipDurationMonths": 12
-        }
-        ```
-        - Description: Adds a new member to the system.
+Members
+Create Member
+POST ```bash /api/members ```
+Body (JSON):
+```bash
+{
+"name": "Keira Hancock",
+"address": "123 Test Street",
+"email": "keira@example.com",
+"phone": "555-1234",
+"membershipType": "Gold",
+"membershipStartDate": "2025-01-01",
+"membershipDurationMonths": 12
+}
+```
+- Description: Adds a new member to the system.
 
-    Get / Search Members
-        - GET ```bash /api/members ```
-            Supports multiple optional query parameters:
-            name: partial, case-insensitive match on member name
-            Example: /api/members?name=keira
-            membershipType: exact match
-            Example: /api/members?membershipType=Gold
-            phone: partial phone match
-            Example: /api/members?phone=555
-            membershipStartDate: exact date (YYYY-MM-DD)
-            Example: /api/members?membershipStartDate=2025-01-01
-            tournamentStartDate: find members that are participating in tournaments starting on this date
-            Example: /api/members?tournamentStartDate=2025-07-01
+Get / Search Members
+- GET ```bash /api/members ```
+Supports multiple optional query parameters:
+name: partial, case-insensitive match on member name
+Example: /api/members?name=keira
+membershipType: exact match
+Example: /api/members?membershipType=Gold
+phone: partial phone match
+Example: /api/members?phone=555
+membershipStartDate: exact date (YYYY-MM-DD)
+Example: /api/members?membershipStartDate=2025-01-01
+tournamentStartDate: find members that are participating in tournaments starting on this date
+Example: /api/members?tournamentStartDate=2025-07-01
 
-    Get Single Member
-        GET ```bash /api/members/:id ```
-            Returns a single member by ID, including the tournaments they are participating in.
+Get Single Member
+GET ```bash /api/members/:id ```
+Returns a single member by ID, including the tournaments they are participating in.
 
-    Get Tournaments for a Member
-        GET ```bash /api/members/:id/tournaments ```
-            Returns all tournaments that the given member is registered for.
+Get Tournaments for a Member
+GET ```bash /api/members/:id/tournaments ```
+Returns all tournaments that the given member is registered for.
 
 
 #### Tournaments
@@ -200,18 +200,18 @@ Returns all members participating in the specified tournament. This satisfies th
 ### Postman Testing
 I tested the API using Postman with the following requests:
 
-```bash POST /api/members ``` – create a member
-```bash POST /api/tournaments ``` – create a tournament
-```bash POST /api/tournaments/1/members ``` – add member with id = 1 to tournament with id = 1
-```bash GET /api/members ``` – list all members
-```bash GET /api/members?name=keira ``` – search members by name
-```bash GET /api/members?membershipType=Gold ``` – search members by membership type
-```bash GET /api/members?phone=555 ``` – search members by phone
-```bash GET /api/members?tournamentStartDate=2025-07-01 ``` – search members by tournament start date
-```bash GET /api/tournaments ``` – list tournaments
-```bash GET /api/tournaments?startDate=2025-07-01 ``` – search tournaments by start date
-```bash GET /api/tournaments?location=John ``` – search tournaments by location
-```bash GET /api/tournaments/1/members ``` – list all members in a specific tournament
+- ``` POST /api/members ``` – create a member
+- ``` POST /api/tournaments ``` – create a tournament
+- ``` POST /api/tournaments/1/members ``` – add member with id = 1 to tournament with id = 1
+- ``` GET /api/members ``` – list all members
+- ``` GET /api/members?name=keira ``` – search members by name
+- ``` GET /api/members?membershipType=Gold ``` – search members by membership type
+- ``` GET /api/members?phone=555 ``` – search members by phone
+- ``` GET /api/members?tournamentStartDate=2025-07-01 ``` – search members by tournament start date
+- ``` GET /api/tournaments ``` – list tournaments
+- ``` GET /api/tournaments?startDate=2025-07-01 ``` – search tournaments by start date
+- ``` GET /api/tournaments?location=John ``` – search tournaments by location
+- ``` GET /api/tournaments/1/members ``` – list all members in a specific tournament
 Screenshots of these Postman requests and responses are included as part of the submission.
 
 
